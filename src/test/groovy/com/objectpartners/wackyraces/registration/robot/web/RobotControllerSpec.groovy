@@ -2,14 +2,11 @@ package com.objectpartners.wackyraces.registration.robot.web
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.gson.Gson
-import org.springframework.mock.web.MockHttpServletResponse
-import org.springframework.test.web.servlet.MockMvc
+import com.objectpartners.wackyraces.registration.robot.RobotService
 import org.springframework.http.MediaType
+import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST
-import static org.springframework.http.HttpStatus.OK
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup
 
@@ -17,6 +14,11 @@ class RobotControllerSpec extends Specification {
 
     RobotController robotController = new RobotController()
     MockMvc mockMvc = standaloneSetup(robotController).build()
+    RobotService mockRobotService = Mock(RobotService)
+
+    void setup() {
+        robotController.robotService = mockRobotService
+    }
 
     void "test valid robot registration request registers robot and returns a robot id"() {
         given:
@@ -31,7 +33,8 @@ class RobotControllerSpec extends Specification {
                 .getContentAsString(), RegistrationResponse.class)
 
         then:
-        response.robotId == 'testrobotid'
+        response.robotId == 'testRobotId'
+        1 * mockRobotService.registerRobot(_) >> { return 'testRobotId' }
     }
 
     private static String toJson(Object obj) {
