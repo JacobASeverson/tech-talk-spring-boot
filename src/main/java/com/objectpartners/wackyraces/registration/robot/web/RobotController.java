@@ -16,8 +16,12 @@ public class RobotController {
 
     @RequestMapping(value = "/register/robot", method = RequestMethod.POST)
     public RegistrationResponse registerRobot(@RequestBody RegistrationRequest request) {
-        //TODO: build robot from request
-        return new RegistrationResponse(robotService.registerRobot(new Robot()));
+
+        Robot robot = new Robot();
+        robot.setName(request.getName());
+        robot.setAddress(request.getAddress());
+
+        return new RegistrationResponse(robotService.registerRobot(robot));
     }
 
 }
