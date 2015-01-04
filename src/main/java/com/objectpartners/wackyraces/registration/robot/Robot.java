@@ -22,6 +22,8 @@ public class Robot {
     public void setId(String id) { this.id = id; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
     public Date getDateRegistered() { return dateRegistered; }
     public void setDateRegistered(Date dateRegistered) { this.dateRegistered = dateRegistered; }
 
