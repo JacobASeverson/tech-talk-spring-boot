@@ -1,13 +1,8 @@
-Starting with CRUD
+Switching To MongoDB
 ===
+All we need to do is add the `@EnableMongoRepositories` annotation to our configuration, update the `Robot` domain, and use `org.springframework.data.mongodb.repository.MongoRepository`.
 
-###Creating this project
-Two ways to quickly set up a Spring Boot project:  
-1) With the [Spring Boot CLI](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli) (easy installation with GVM). The command that created this project:  
-   
-   `spring init -d=data-rest,data-jpa --build=gradle 1-crud-starter`  
-
-2) Using the [Spring Initializr Application](http://start.spring.io/) to generate your Gradle build file.
+> **Note**: The project doesn't come with an embedded MongoDB datastore similar to H2 so you will need MongoDB running on your machine.
 
 ###Building and running
 Build the project:
