@@ -2,6 +2,7 @@ package com.objectpartners.wackyraces.registration.robot;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -13,13 +14,15 @@ public class Robot {
 
     private String name;
     private String address;
-    private Date dateCreated;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private Date dateRegistered = new Date();
 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-    public Date getDateCreated() { return dateCreated; }
-    public void setDateCreated(Date dateCreated) { this.dateCreated = dateCreated; }
+    public Date getDateRegistered() { return dateRegistered; }
+    public void setDateRegistered(Date dateRegistered) { this.dateRegistered = dateRegistered; }
 
 }
