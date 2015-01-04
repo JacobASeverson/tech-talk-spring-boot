@@ -9,5 +9,7 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "robots", path = "robots")
 public interface RobotRepository extends MongoRepository<Robot, String> {
+
     List<Robot> findByName(@Param("name") String name);
+
 }
