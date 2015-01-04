@@ -1,4 +1,4 @@
-package com.objectpartners.wackyraces.registration.robot.web;
+package com.objectpartners.wackyraces.registration.robot;
 
 import com.objectpartners.wackyraces.registration.robot.Robot;
 import org.springframework.data.mongodb.repository.MongoRepository;
