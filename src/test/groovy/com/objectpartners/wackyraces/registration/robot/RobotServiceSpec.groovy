@@ -5,6 +5,11 @@ import spock.lang.Specification
 class RobotServiceSpec extends Specification {
 
     RobotService robotService = new RobotService()
+    RobotRepository mockRobotRepository = Mock(RobotRepository)
+
+    void setup() {
+        robotService.robotRepository = mockRobotRepository
+    }
 
     void "test a valid robot gets registered"() {
         given:
@@ -14,6 +19,7 @@ class RobotServiceSpec extends Specification {
         String robotId = robotService.registerRobot(robot)
 
         then:
-        robotId == "testRobotId"
+        robotId == 'testRobotId'
+        1 * mockRobotRepository.save(_) >> { return new Robot(robotId: 'testRobotId') }
     }
 }
