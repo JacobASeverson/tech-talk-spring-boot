@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Document
 public class Robot {
@@ -18,6 +19,8 @@ public class Robot {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Date dateRegistered = new Date();
 
+    private String robotId = UUID.randomUUID().toString();
+
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
     public String getName() { return name; }
@@ -26,5 +29,7 @@ public class Robot {
     public void setAddress(String address) { this.address = address; }
     public Date getDateRegistered() { return dateRegistered; }
     public void setDateRegistered(Date dateRegistered) { this.dateRegistered = dateRegistered; }
+    public String getRobotId() { return robotId; }
+    public void setRobotId(String robotId) { this.robotId = robotId; }
 
 }
