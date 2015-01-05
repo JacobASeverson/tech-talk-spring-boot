@@ -26,8 +26,8 @@ repositories {
 
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-data-rest")
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile(group: 'org.spockframework', name: 'spock-core', version:'0.7-groovy-2.0') {
         exclude(module: 'groovy-all')
