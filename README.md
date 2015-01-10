@@ -1,6 +1,6 @@
-Switching To MongoDB
+Changing The App's Configuration
 ===
-TODO
+* Split out Mongo to its own config class and configured the database.
 
 ###Building and running
 Build the project:
