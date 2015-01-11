@@ -1,6 +1,6 @@
-Changing The App's Configuration
+Adding production features
 ===
-* Split out Mongo to its own config class and configured the database.
+
 
 ###Building and running
 Build the project:
