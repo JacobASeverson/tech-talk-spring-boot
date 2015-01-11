@@ -14,4 +14,4 @@ Run the application:
 
 
 Register a robot:
-`curl -i -X POST -H "Content-Type:application/json" -d '{ "name" : "Red Max", "address" : "127.0.0.1" }' localhost:8080/register/robot`
+`curl -i -X POST -H "Content-Type:application/json" -d '{ "name" : "Red Max", "address" : "0.0.0.0" }' localhost:8080/register/robot`
