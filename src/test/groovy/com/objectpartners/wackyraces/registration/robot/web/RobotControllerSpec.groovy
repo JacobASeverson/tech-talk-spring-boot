@@ -3,6 +3,7 @@ package com.objectpartners.wackyraces.registration.robot.web
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.gson.Gson
 import com.objectpartners.wackyraces.registration.robot.RobotService
+import org.springframework.boot.actuate.metrics.CounterService
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import spock.lang.Specification
@@ -15,9 +16,11 @@ class RobotControllerSpec extends Specification {
     RobotController robotController = new RobotController()
     MockMvc mockMvc = standaloneSetup(robotController).build()
     RobotService mockRobotService = Mock(RobotService)
+    CounterService mockCounterService = Mock(CounterService)
 
     void setup() {
         robotController.robotService = mockRobotService
+        robotController.counterService = mockCounterService
     }
 
     void "test valid robot registration request registers robot and returns a robot id"() {
@@ -34,6 +37,7 @@ class RobotControllerSpec extends Specification {
 
         then:
         response.robotId == 'testRobotId'
+        1 * mockCounterService.increment("registration.register");
         1 * mockRobotService.registerRobot(_) >> { return 'testRobotId' }
     }
 
