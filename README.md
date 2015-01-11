@@ -30,5 +30,8 @@ Build the project:
 Run the application:
 `java -jar build/libs/registration-0.0.4-SNAPSHOT.jar`
 
+![Prof Pat Pending](http://www.dan-dare.org/Dan%20FRD/Convert-A-CarAni.gif)   
+[credit to dan-dare.org for the picture]
+
 Register a robot:
 `curl -i -X POST -H "Content-Type:application/json" -d '{ "name" : "Prof Pat Pending", "address" : "127.0.0.1" }' localhost:8080/register/robot`
