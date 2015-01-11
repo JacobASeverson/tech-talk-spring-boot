@@ -18,7 +18,7 @@ Hit the robots resource that we set up:
 `curl localhost:8080/robots`
 
 Add a robot:
-`curl -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Dick Dastardly" }' localhost:8080/robots`
+`curl -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Slag Brothers" }' localhost:8080/robots`
 
 Check out the robot we just created:
 `curl localhost:8080/robots`
