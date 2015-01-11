@@ -13,6 +13,9 @@ Build the project:
 Run the application:
 `java -jar build/libs/registration-0.0.5-SNAPSHOT.jar`
 
+![Penelope Pitstop](http://www.dan-dare.org/Dan%20FRD/CompactPussycatAni.gif)   
+[credit to dan-dare.org for the picture]
+
 Register a robot:
 `curl -i -X POST -H "Content-Type:application/json" -d '{ "name" : "Penelope Pitstop", "address" : "127.0.0.1" }' localhost:8080/register/robot`
 
