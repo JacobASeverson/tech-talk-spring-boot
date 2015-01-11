@@ -9,7 +9,7 @@ Build the project:
 `./gradlew build`
 
 Run the application:
-`java -jar build/libs/registration-0.0.1-SNAPSHOT.jar`
+`java -jar build/libs/registration-0.0.2-SNAPSHOT.jar`
 
 Hit the application:
 `curl localhost:8080`
