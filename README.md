@@ -1,24 +1,35 @@
-Switching To MongoDB
+Updating the model
 ===
-All we need to do is add the `@EnableMongoRepositories` annotation to our configuration, update the `Robot` domain, and use `org.springframework.data.mongodb.repository.MongoRepository`.
+At this point the architecture and model of registration has been flushed out and we are ready to update it to what 
+will actually be stored.  
+ 
+![Registration Service](/src/main/resources/registration-service.jpg)   
 
-> **Note**: The project doesn't come with an embedded MongoDB datastore similar to H2 so you will need MongoDB running on your machine.
+![Robot](/src/main/resources/robot.jpg)   
+
+
 
 ###Building and running
 Build the project:
 `./gradlew build`
 
 Run the application:
-`java -jar build/libs/registration-0.0.1-SNAPSHOT.jar`
-
-Hit the application:
-`curl localhost:8080`
-
-Hit the robots resource that we set up:
-`curl localhost:8080/robots`
+`java -jar build/libs/registration-0.0.3-SNAPSHOT.jar`
 
 Add a robot:
-`curl -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Dick Dastardly" }' localhost:8080/robots`
+`curl -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Gruesome Twosome", "address" : "0.0.0.0" }' localhost:8080/robots`
 
-Check out the robot we just created:
-`curl localhost:8080/robots`
+Notice the new fields that we added if you GET the robot we just registered:
+```json
+{
+  "name" : "Gruesome Twosome",
+  "address" : "0.0.0.0",
+  "dateRegistered" : "...",
+  "robotId" : "...",
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/robots/..."
+    }
+  }
+}
+```
