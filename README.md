@@ -11,10 +11,11 @@ POST
 |------|------|
 | Content-Type | application/json |
 
-*Request Body*:   
+*Request Body*:
+
 | Field   | Description                                    |
 |---------|------------------------------------------------|
-| name    | asdf                                           |
+| name    | The name of the robot                          |
 | address | The IP address currently assigned to the robot |
 
 ###Updating the services
