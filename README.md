@@ -16,4 +16,4 @@ Run the application:
 Register a robot:
 `curl -i -X POST -H "Content-Type:application/json" -d '{ "name" : "Penelope Pitstop", "address" : "127.0.0.1" }' localhost:8080/register/robot`
 
-Notice that now our robots are saved to a `Registration` DB, instead of in the default collection.
+> **Note**: notice now our robots are saved to a `Registration` DB.
