@@ -7,7 +7,11 @@ will actually be stored.
 
 ![Robot](/src/main/resources/robot.jpg)   
 
-
+###Updating the model
+We will add three fields to `com.objectpartners.wackyraces.registration.robot.Robot`:
+* `String address`
+* `Date dateRegistered`
+* `String robotId`
 
 ###Building and running
 Build the project:
