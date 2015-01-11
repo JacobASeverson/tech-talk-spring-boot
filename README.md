@@ -20,6 +20,9 @@ Build the project:
 Run the application:
 `java -jar build/libs/registration-0.0.3-SNAPSHOT.jar`
 
+![Gruesome Twosome](http://www.dan-dare.org/Dan%20FRD/CreepyCoupeAni.gif)   
+[credit to dan-dare.org for the picture]
+
 Add a robot:
 `curl -i -X POST -H "Content-Type:application/json" -d '{  "name" : "Gruesome Twosome", "address" : "0.0.0.0" }' localhost:8080/robots`
 
