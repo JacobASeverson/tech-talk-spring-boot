@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RobotController {
 
     @Autowired
-    RobotService robotService;
+    private RobotService robotService;
 
     @RequestMapping(value = "/register/robot", method = RequestMethod.POST)
     public RegistrationResponse registerRobot(@RequestBody RegistrationRequest request) {

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class RobotService {
 
     @Autowired
-    RobotRepository robotRepository;
+    private RobotRepository robotRepository;
 
     public String registerRobot(Robot robot) {
         return robotRepository.save(robot).getRobotId();
