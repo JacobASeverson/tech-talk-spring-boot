@@ -13,8 +13,8 @@ import org.springframework.boot.actuate.metrics.CounterService;
 @RestController
 public class RobotController {
 
-    @Autowired RobotService robotService;
-    @Autowired CounterService counterService;
+    @Autowired private RobotService robotService;
+    @Autowired private CounterService counterService;
     private Logger log = Logger.getLogger(RobotController.class);
 
     @RequestMapping(value = "/register/robot", method = RequestMethod.POST)
