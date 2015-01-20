@@ -1,6 +1,8 @@
 Adding production features
 ===
-
+To get runtime insights into the application we will do two things:
+* Add `org.springframework.boot:spring-boot-starter-actuator` to our dependencies
+* Add a new counter metric to our `RobotController` so we know how many registrations have been happening
 
 ###Building and running
 Build the project:
